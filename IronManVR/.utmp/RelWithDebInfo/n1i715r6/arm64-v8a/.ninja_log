@@ -1,0 +1,10 @@
+# ninja log v5
+6	808	1741231528517736137	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1cbce9d16e9bc195
+1	880	1741231528596785983	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	80a692a98550f7fc
+2	899	1741231528613248746	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	db8e00d8030ae219
+6	910	1741231528628694964	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b6f8b3f71a6311af
+1	977	1741231528693772180	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f6079c5efc86188b
+10	993	1741231528711119946	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	661ae20409cf5555
+5	1153	1741231528870833934	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	3d3f7c13e3934f34
+0	1209	1741231528926524244	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d353c5b47c9ae40b
+1209	1342	1741231529056247008	/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/n1i715r6/obj/arm64-v8a/libgame.so	e2a79eed2d2f209
