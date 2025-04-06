@@ -4,9 +4,9 @@ using UnityEngine;
 public class PunchInteractorDebugText : MonoBehaviour
 {
     public TextMeshPro pokeStrengthText;
-
+    
     public PunchInteractor punchInteractor;
-
+    
     private float maxVelocity = 0.0f;
     
     
@@ -24,16 +24,16 @@ public class PunchInteractorDebugText : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+    
     
     private void Update()
     {
-        float velocity = punchInteractor.velocity;
+        float velocity = punchInteractor.currentVelocity;
         if (velocity > maxVelocity)
         {
             maxVelocity = velocity;
         }
         
-        pokeStrengthText.text = "Velocity: " + punchInteractor.velocity.ToString("F2") + "\nMax Velocity: " + maxVelocity.ToString("F2");
+        pokeStrengthText.text = "Velocity: " + punchInteractor.currentVelocity.ToString("F2") + "\nMax Velocity: " + maxVelocity.ToString("F2");
     }
 }
