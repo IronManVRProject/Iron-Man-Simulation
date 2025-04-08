@@ -286,7 +286,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "5.0.0",
+      "version": "3.0.6",
       "depth": 2,
       "source": "builtin",
       "dependencies": {
@@ -363,7 +363,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.legacyinputhelpers": {
-      "version": "2.1.12",
+      "version": "2.1.11",
       "depth": 1,
       "source": "registry",
       "dependencies": {

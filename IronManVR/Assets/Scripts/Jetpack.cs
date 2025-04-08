@@ -7,6 +7,8 @@ public class Jetpack : MonoBehaviour
 {
     public InputActionReference jetpackInputActionReference;
     public float jetpackForce;
+    public AudioSource audioSource;
+    public ParticleSystem particles;
 
     private Rigidbody _playerRb;
     private float _triggerValue;
@@ -28,7 +30,7 @@ public class Jetpack : MonoBehaviour
         jetpackInputActionReference.action.performed -= SetTriggerValue;
     }
 
- // Event function
+    // Event function
     private void SetTriggerValue(InputAction.CallbackContext obj)
     {
         _triggerValue = obj.ReadValue<float>();
@@ -36,7 +38,31 @@ public class Jetpack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _playerRb.AddForce(-transform.forward * (_triggerValue * jetpackForce * Time.deltaTime), ForceMode.Force);
+		if (_triggerValue > 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            };
+            if (!particles.isPlaying)
+            {
+                particles.Play();
+            }
+            _playerRb.AddForce(-transform.forward * (_triggerValue * jetpackForce * Time.deltaTime), ForceMode.Force);
+        }
+        
+        if (_triggerValue <= 0.6) 
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+            if (particles.isPlaying)
+            {
+                particles.Stop();
+            }
+        }
     }
 
 
