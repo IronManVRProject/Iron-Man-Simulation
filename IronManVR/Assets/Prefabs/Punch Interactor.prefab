@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491fd159545974d5a863bdc2f6d10462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punchVelocityThreshold: 2
+  punchVelocityThreshold: 1.5
   punchCooldown: 0.3
   punchableTag: Punchable
   punchStrengthMultiplier: 2
-  punchHitSoundClip: {fileID: 8300000, guid: d7dfcc0af46a14f168638704f2c65e10, type: 3}
   punchEffectPrefab: {fileID: 3519552542754284382, guid: ba37bdc6e60734b70bad3cabbda5e072, type: 3}
+  controllerRigidbody: {fileID: 0}
   currentVelocity: 0
 --- !u!135 &9041524682748483102
 SphereCollider:
