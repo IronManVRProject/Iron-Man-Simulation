@@ -28,19 +28,19 @@ public class PunchInteractor : MonoBehaviour
 
     void Start()
     {
-        if (controllerRigidbody == null)
-        {
-            controllerRigidbody = GetComponent<Rigidbody>();
-            if (controllerRigidbody == null)
-            {
-                Debug.LogError("PunchDetector requires a Rigidbody component!", this);
-                enabled = false;
-                return;
-            }
-        }
-
-        // Ensure Rigidbody is Kinematic (as it should be controlled by tracking)
-        controllerRigidbody.isKinematic = true;
+        // if (controllerRigidbody == null)
+        // {
+        //     controllerRigidbody = GetComponent<Rigidbody>();
+        //     if (controllerRigidbody == null)
+        //     {
+        //         Debug.LogError("PunchDetector requires a Rigidbody component!", this);
+        //         enabled = false;
+        //         return;
+        //     }
+        // }
+        //
+        // // Ensure Rigidbody is Kinematic (as it should be controlled by tracking)
+        // controllerRigidbody.isKinematic = true;
 
         previousPosition = transform.position;
     }
