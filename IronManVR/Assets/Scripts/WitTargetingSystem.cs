@@ -1,9 +1,8 @@
 using UnityEngine;
-using Meta.WitAi;
 using Meta.WitAi.Json;
-using Meta.WitAi.Events;
 using System.Collections.Generic; // For List<>
 using Oculus.Voice;
+using UnityEngine.InputSystem;
 
 public class WitTargetingSystem : MonoBehaviour
 {
@@ -13,6 +12,13 @@ public class WitTargetingSystem : MonoBehaviour
 
   [Tooltip("Optional: Parent transform for instantiated indicators.")]
   public Transform indicatorParent; // Assign the World Space Canvas if you want indicators grouped
+  
+  [Tooltip("Button to press to activate voice mode.")]
+  public InputActionReference activateButton;
+
+  public AudioClip buttonTestAudio;
+  public GameObject player;
+  
   private AppVoiceExperience appVoiceExperience;
   private Dictionary<GameObject, GameObject> activeIndicators = new Dictionary<GameObject, GameObject>(); // Key: Enemy, Value: Indicator
 
@@ -73,10 +79,11 @@ public class WitTargetingSystem : MonoBehaviour
   void Update()
   {
 
-    // Use 'T' key for this specific test to avoid confusion
-    if (Input.GetKeyDown(KeyCode.T))
+    if (activateButton.action.triggered)
     {
-      Debug.Log("SimpleWit: 'T' key pressed. Attempting activation.");
+      AudioSource.PlayClipAtPoint(buttonTestAudio, player.transform.position);
+      
+      Debug.Log("SimpleWit: Voice key pressed. Toggling voice activation.");
       if (appVoiceExperience != null)
       {
         if (!appVoiceExperience.Active)
@@ -85,7 +92,7 @@ public class WitTargetingSystem : MonoBehaviour
         }
         else
         {
-          Debug.LogWarning("SimpleWit: Cannot activate, AppVoiceExperience is already active?");
+          appVoiceExperience.Deactivate();
         }
       }
       else
