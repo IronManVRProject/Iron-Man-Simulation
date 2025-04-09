@@ -1,2 +1,0 @@
-/Users/anthony/Engineering/Unity/Iron-Man-Simulation/IronManVR/Library/PramData/AndroidApplicationController/Cache/com.UnityTechnologies.com.unity.template.urpblank/gradle-project/unityLibrary/src/main/cpp/CMakeLists.txt
-/Users/anthony/Engineering/Unity/Iron-Man-Simulation/IronManVR/Library/PramData/AndroidApplicationController/Cache/com.UnityTechnologies.com.unity.template.urpblank/gradle-project/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt
