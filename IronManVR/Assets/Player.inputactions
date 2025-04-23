@@ -1,0 +1,62 @@
+{
+    "name": "Player",
+    "maps": [
+        {
+            "name": "Player RightHand",
+            "id": "9c3453f5-f3c3-4967-908a-336a8c826d82",
+            "actions": [
+                {
+                    "name": "Fire",
+                    "type": "Value",
+                    "id": "c68766c4-2cc0-4ecf-a114-95ee6f05ac3f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4a2cdc00-9b18-4d91-942f-fd8e19cd18a3",
+                    "path": "<OculusTouchController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player LeftHand",
+            "id": "1333bd35-ca74-42b1-ad68-3c3447bc82ec",
+            "actions": [
+                {
+                    "name": "Fire",
+                    "type": "Value",
+                    "id": "a19f4d8d-f92f-44d3-acb1-5dd571df6d57",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "31ebc19b-fd29-4b99-8f41-b3ab3189a704",
+                    "path": "<OculusTouchController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
