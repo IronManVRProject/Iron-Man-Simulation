@@ -13,6 +13,7 @@ namespace AI.FSM
 
             if (patrolPoints.HasReached(navMeshAgent))
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
+                // navMeshAgent.Move(navMeshAgent.nextPosition);
         }
     }
 }

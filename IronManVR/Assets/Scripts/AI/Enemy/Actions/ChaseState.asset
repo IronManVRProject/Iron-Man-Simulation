@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c9bd6069cc4511b2c33c9e001f53bd, type: 3}
   m_Name: ChaseState
   m_EditorClassIdentifier: 
-  Action: []
+  Action:
+  - {fileID: 11400000, guid: 91b791d91e30f4489a2146919377e78c, type: 2}
   Transitions: []
