@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627ce2214320480684110affe6fb6de3, type: 3}
+  m_Name: Player In Attack Range
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: b3b3431310d074767b750122113f01de, type: 2}
+  trueState: {fileID: 11400000, guid: e60e94f8efb8b4995820d659df461152, type: 2}
+  falseState: {fileID: 11400000, guid: 3c3caa299bb8445a69a987e2a452f4de, type: 2}

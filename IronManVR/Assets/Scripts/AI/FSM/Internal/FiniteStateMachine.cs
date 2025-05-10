@@ -8,9 +8,9 @@ namespace AI.FSM
     public class FiniteStateMachine : MonoBehaviour
     {
         [SerializeField] private State initialState;
-        private Dictionary<Type, Component> cachedComponents;
-        
-        public State currentState { get; set; }
+        public Dictionary<Type, Component> cachedComponents;
+
+        public State currentState;
 
         private void Awake()
         {

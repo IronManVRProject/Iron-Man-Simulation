@@ -10,10 +10,9 @@ namespace AI.FSM
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
-
+            
             if (patrolPoints.HasReached(navMeshAgent))
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
-                // navMeshAgent.Move(navMeshAgent.nextPosition);
         }
     }
 }

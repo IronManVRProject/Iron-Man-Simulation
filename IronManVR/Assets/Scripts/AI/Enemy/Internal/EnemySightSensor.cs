@@ -25,15 +25,16 @@ namespace AI.FSM.Internal
 
             ray = new Ray(transform.position, player.position-transform.position);
 
-            var dir = new Vector3(ray.direction.x, 0, ray.direction.z);
+            var dir = new Vector3(ray.direction.x, ray.direction.y, ray.direction.z);
 
             var angle = Vector3.Angle(dir, transform.forward);
 
-            if (angle>60)
+            if (angle > 60)
                 return false;
 
             if (!Physics.Raycast(ray, out var hit, 100, ~ignoreMask))
             {
+                Debug.Log("Raycast hit nothing");
                 return false;
             }
         
@@ -45,6 +46,21 @@ namespace AI.FSM.Internal
             }
 
             return false;
+        }
+        
+        
+        public bool IsPlayerInRange(float detectionRadius = 10f)
+        {
+            var playerLayer = LayerMask.GetMask("Player");
+            
+            bool playerInRange = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer).Length > 0;
+            
+            if (playerInRange)
+            {
+                Debug.Log("Player in range");
+            }
+
+            return playerInRange;
         }
 
         private void OnDrawGizmos()

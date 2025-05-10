@@ -33,10 +33,7 @@ namespace AI.FSM
             {
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
 
