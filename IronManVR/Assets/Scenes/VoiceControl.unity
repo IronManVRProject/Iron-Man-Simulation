@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711df5de3444aad4489cc7534933c4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandInputAction: {fileID: -8183279235367311476, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftHandInputAction: {fileID: 4309484429286351284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   indicatorPrefab: {fileID: 8388844871517615705, guid: 2ffcd9eb42f92264093aa44cc1cf19ea, type: 3}
   indicatorParent: {fileID: 0}
   activationSound: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
@@ -1289,7 +1289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &690977511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,7 +2424,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972559815
 MonoBehaviour:

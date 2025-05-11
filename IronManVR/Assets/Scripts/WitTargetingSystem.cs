@@ -34,7 +34,7 @@ public class WitTargetingSystem : MonoBehaviour
     {
       audioSource = gameObject.AddComponent<AudioSource>();
     }
-    audioSource.playOnAwake = false;
+    audioSource.playOnAwake = true;
 
     appVoiceExperience = GetComponent<AppVoiceExperience>();
     if (appVoiceExperience == null)
