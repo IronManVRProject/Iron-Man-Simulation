@@ -34,7 +34,7 @@ public class WitTargetingSystem : MonoBehaviour
     {
       audioSource = gameObject.AddComponent<AudioSource>();
     }
-    audioSource.playOnAwake = true;
+    audioSource.playOnAwake = false;
 
     appVoiceExperience = GetComponent<AppVoiceExperience>();
     if (appVoiceExperience == null)
@@ -165,12 +165,6 @@ public class WitTargetingSystem : MonoBehaviour
       {
         Debug.Log("WitTargetingSystem: Deactivating AppVoiceExperience (Hold-to-listen).", this);
         appVoiceExperience.Deactivate();
-
-        if (listeningIndicator != null)
-        {
-          listeningIndicator.SetActive(false);
-          Debug.Log("WitTargetingSystem: Listening indicator deactivated.", this);
-        }
       }
       else
       {
@@ -319,6 +313,12 @@ public class WitTargetingSystem : MonoBehaviour
         Debug.Log("Playing activation sound.", this);
         audioSource.PlayOneShot(activationSound);
       }
+
+      if (listeningIndicator != null)
+      {
+        listeningIndicator.SetActive(true);
+        Debug.Log("WitTargetingSystem: Listening indicator activated.", this);
+      }
     }
     else if (activationSound == null)
     {
@@ -332,5 +332,10 @@ public class WitTargetingSystem : MonoBehaviour
   private void HandleListenStop()
   {
     Debug.Log("Targeting System Stopped Listening.", this);
+    if (listeningIndicator != null)
+    {
+      listeningIndicator.SetActive(false);
+      Debug.Log("WitTargetingSystem: Listening indicator deactivated.", this);
+    }
   }
 }
