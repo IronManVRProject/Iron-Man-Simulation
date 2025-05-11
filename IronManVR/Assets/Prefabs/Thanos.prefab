@@ -1709,14 +1709,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
-  healthPoints: 100
   isDestructible: 1
   hitEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
   destructionEffectPrefab: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
   hitMaterial: {fileID: 0}
   hitFlashDuration: 0.2
   hitSound: {fileID: 8300000, guid: b110298c0a00e479db9c6337d500fc51, type: 3}
-  destructionSound: {fileID: 8300000, guid: f279bba83e6d14bba9cad22a136e9dbb, type: 3}
+  destructionSound: {fileID: 8300000, guid: 3669845d3458847fb9ff59149c40e0c7, type: 3}
 --- !u!114 &7393878278204301948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3776,7 +3775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c9a104629a9419d8342ec7727b79c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
+  initialHealth: 2
   currentHealth: 0
 --- !u!1 &8752808034017780383
 GameObject:
