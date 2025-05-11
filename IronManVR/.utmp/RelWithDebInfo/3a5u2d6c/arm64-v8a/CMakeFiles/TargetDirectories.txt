@@ -1,0 +1,5 @@
+/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/3a5u2d6c/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/3a5u2d6c/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/3a5u2d6c/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/3a5u2d6c/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/3a5u2d6c/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

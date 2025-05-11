@@ -22,9 +22,9 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2025-04-06T14:26:15-0700
     trainingStatus: 1
-    lastTrainDuration: 57
-    lastTrainedAt: 2025-04-06T14:33:31-0700
-    nextTrainAt: 2025-04-06T14:32:34-0700
+    lastTrainDuration: 44
+    lastTrainedAt: 2025-04-08T18:21:35-0700
+    nextTrainAt: 2025-04-08T18:20:51-0700
     intents:
     - id: 1157558549494727
       name: disengage_target
