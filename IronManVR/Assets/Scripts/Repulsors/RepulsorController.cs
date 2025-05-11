@@ -40,37 +40,37 @@ public class RepulsorController : MonoBehaviour
     }
     
     private void OnEnable()
-{
-    if (activateRepulsorAction != null)
     {
-        activateRepulsorAction.action.performed += OnRepulsorPressed;
-        activateRepulsorAction.action.canceled += OnRepulsorReleased;
-        activateRepulsorAction.action.Enable();
+        if (activateRepulsorAction != null)
+        {
+            activateRepulsorAction.action.performed += OnRepulsorPressed;
+            activateRepulsorAction.action.canceled += OnRepulsorReleased;
+            activateRepulsorAction.action.Enable();
+        }
     }
-}
 
     private void OnDisable()
-{
-    if (activateRepulsorAction != null)
     {
-        activateRepulsorAction.action.performed -= OnRepulsorPressed;
-        activateRepulsorAction.action.canceled -= OnRepulsorReleased;
-        activateRepulsorAction.action.Disable();
+        if (activateRepulsorAction != null)
+        {
+            activateRepulsorAction.action.performed -= OnRepulsorPressed;
+            activateRepulsorAction.action.canceled -= OnRepulsorReleased;
+            activateRepulsorAction.action.Disable();
+        }
     }
-}
 
     
     private void OnRepulsorPressed(InputAction.CallbackContext context)
-{
-    if (!isRepulsorActive)
-        ActivateRepulsor();
-}
+    {
+        if (!isRepulsorActive)
+            ActivateRepulsor();
+    }
 
     private void OnRepulsorReleased(InputAction.CallbackContext context)
-{
-    if (isRepulsorActive)
-        DeactivateRepulsor();
-}
+    {
+        if (isRepulsorActive)
+            DeactivateRepulsor();
+    }
 
     
     private void ActivateRepulsor()

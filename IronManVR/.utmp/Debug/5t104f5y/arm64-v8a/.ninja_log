@@ -1,10 +1,10 @@
 # ninja log v5
-2	681	1744175498035965834	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d91e42589d4451a8
-2	695	1744175498050447805	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5d29044d2f74de93
-1	704	1744175498063304664	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	12c8f4a9492156d8
-3	713	1744175498071309435	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	549f60690b679f17
-3	714	1744175498073035171	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	acffb1df7ed2892d
-1	753	1744175498112821112	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	21967d2ada3b5dea
-2	791	1744175498150305863	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c4e9e8a09563a4b
-0	849	1744175498207629334	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	adbca0d17a520fb5
-849	983	1744175498336244334	/Users/anthony/Engineering/Unity/Iron-Man-Simulation/IronManVR/Library/PramData/AndroidApplicationController/Cache/com.UnityTechnologies.com.unity.template.urpblank/gradle-project/unityLibrary/build/intermediates/cxx/Debug/5t104f5y/obj/arm64-v8a/libgame.so	d39f23259c70ab4b
+1	959	1746927103797778727	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	63fbb29688e7e9ea
+2	967	1746927103804953339	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	413542566a543fc7
+3	979	1746927103818846640	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	914f007a016e9542
+4	1025	1746927103864378351	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	81391bb2c8587635
+0	1033	1746927103872922193	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	e2d636eb906c8e2e
+1	1041	1746927103879668298	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	36f22ba9e890800f
+2	1109	1746927103946542342	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1c9bb1ae2310a719
+0	1131	1746927103968369725	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1fb8ba668438e5b4
+1131	1294	1746927104125699390	/Users/anthony/Engineering/Unity/Iron-Man-Simulation/IronManVR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/5t104f5y/obj/arm64-v8a/libgame.so	36aceef177467847

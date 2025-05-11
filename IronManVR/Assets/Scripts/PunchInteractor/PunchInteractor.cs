@@ -14,13 +14,14 @@ public class PunchInteractor : MonoBehaviour
 
     [Tooltip("Multiplier for punch strength based on velocity")]
     public float punchStrengthMultiplier = 10f;
+
+    public float punchDamageMultiplier = 1f;
     
     [Header("Extras")]
     
     [Tooltip("Prefab for visual effect on punch")]
     public GameObject punchEffectPrefab;
-
-    public Rigidbody controllerRigidbody;
+    
     private Vector3 previousPosition;
     [HideInInspector]
     public float currentVelocity;
@@ -28,20 +29,6 @@ public class PunchInteractor : MonoBehaviour
 
     void Start()
     {
-        // if (controllerRigidbody == null)
-        // {
-        //     controllerRigidbody = GetComponent<Rigidbody>();
-        //     if (controllerRigidbody == null)
-        //     {
-        //         Debug.LogError("PunchDetector requires a Rigidbody component!", this);
-        //         enabled = false;
-        //         return;
-        //     }
-        // }
-        //
-        // // Ensure Rigidbody is Kinematic (as it should be controlled by tracking)
-        // controllerRigidbody.isKinematic = true;
-
         previousPosition = transform.position;
     }
 
@@ -85,6 +72,14 @@ public class PunchInteractor : MonoBehaviour
                 Vector3 punchDirection = (other.transform.position - transform.position).normalized;
                 float forceMagnitude = punchStrengthMultiplier * currentVelocity;
                 targetRb.AddForce(punchDirection * forceMagnitude, ForceMode.Impulse);
+            }
+            
+            Health health = other.GetComponentInChildren<Health>();
+            if (health)
+            {
+                int damage = Mathf.RoundToInt(punchDamageMultiplier * currentVelocity);
+                health.TakeDamage(damage);
+                Debug.Log($"Dealt {damage} damage to {other.gameObject.name}!");
             }
 
             // Trigger Haptics (Requires configuration in Input Actions)

@@ -7,7 +7,6 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
 {
     [Header("Target Settings")]
     [SerializeField] private int scoreValue = 10;
-    [SerializeField] private float healthPoints = 100f;
     [SerializeField] private bool isDestructible = true;
     
     [Header("Visual Effects")]
@@ -26,6 +25,7 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
     private AudioSource audioSource;
     private bool isDestroyed = false;
     private Transform playerTransform;
+    private Health health;
     
     // Events
     public delegate void TargetHitEvent(int scoreValue);
@@ -43,28 +43,40 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null && (hitSound != null || destructionSound != null))
             audioSource = gameObject.AddComponent<AudioSource>();
+
+        health = GetComponent<Health>();
+
+        if (!health)
+        {
+            health = GetComponentInChildren<Health>();
+            
+            if (health)
+                Debug.Log($"Found health component on child object {health.name}.");
+            else
+                Debug.Log($"No health component found on {name} or its children.");
+        }
     }
 
     private void Start()
-{
-    GameObject player = GameObject.Find("XR Origin (XR Rig)"); // This matches your exact object name
-    if (player != null)
     {
-        playerTransform = player.transform;
-        FacePlayer();
+        GameObject player = GameObject.Find("XR Origin (XR Rig)"); // This matches your exact object name
+        if (player != null)
+        {
+            playerTransform = player.transform;
+            FacePlayer();
+        }
     }
-}
 
     private void FacePlayer()
-{
-    if (playerTransform == null) return;
+    {
+        if (playerTransform == null) return;
 
-    Vector3 lookDirection = playerTransform.position - transform.position;
-    lookDirection.y = 0f; // Prevent up/down tilt
+        Vector3 lookDirection = playerTransform.position - transform.position;
+        lookDirection.y = 0f; // Prevent up/down tilt
 
-    if (lookDirection != Vector3.zero)
-        transform.rotation = Quaternion.LookRotation(lookDirection);
-}
+        if (lookDirection != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(lookDirection);
+    }
 
 
     
@@ -75,7 +87,7 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
             
         // Apply damage based on repulsor power
         if (isDestructible)
-            healthPoints -= power;
+            health.TakeDamage(Mathf.RoundToInt(power));
             
         // Visual feedback
         StartCoroutine(FlashHitEffect());
@@ -88,6 +100,9 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
                 hitPoint, 
                 Quaternion.LookRotation(direction * -1f)
             );
+            
+            effect.transform.SetParent(transform);
+            
             Destroy(effect, 2f); // Clean up effect after 2 seconds
         }
         
@@ -103,7 +118,7 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
             OnTargetHit(scoreValue);
             
         // Check if target is destroyed
-        if (isDestructible && healthPoints <= 0 && !isDestroyed)
+        if (isDestructible && health && health.IsAlive())
         {
             DestroyTarget();
         }
@@ -167,18 +182,18 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
     }
 
     private IEnumerator DestroyAfterDelay(float delay)
-{
-    yield return new WaitForSeconds(delay);
+    {
+        yield return new WaitForSeconds(delay);
 
-    // After delay, disable visuals and colliders
-    if (targetRenderer != null)
-        targetRenderer.enabled = false;
+        // After delay, disable visuals and colliders
+        if (targetRenderer != null)
+            targetRenderer.enabled = false;
 
-    Collider[] colliders = GetComponents<Collider>();
-    foreach (Collider col in colliders)
-        col.enabled = false;
+        Collider[] colliders = GetComponents<Collider>();
+        foreach (Collider col in colliders)
+            col.enabled = false;
 
-    Destroy(gameObject);
-}
+        Destroy(gameObject);
+    }
 
 }
