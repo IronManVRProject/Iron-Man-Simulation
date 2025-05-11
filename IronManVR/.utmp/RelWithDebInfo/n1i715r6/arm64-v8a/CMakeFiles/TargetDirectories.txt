@@ -1,5 +1,0 @@
-/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/n1i715r6/arm64-v8a/CMakeFiles/edit_cache.dir
-/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/n1i715r6/arm64-v8a/CMakeFiles/rebuild_cache.dir
-/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/n1i715r6/arm64-v8a/GameActivity/CMakeFiles/game.dir
-/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/n1i715r6/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
-/Users/anthony/Engineering/Unity Projects/Iron-Man-Simulation/IronManVR/.utmp/RelWithDebInfo/n1i715r6/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
