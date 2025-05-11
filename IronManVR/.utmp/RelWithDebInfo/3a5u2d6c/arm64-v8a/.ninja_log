@@ -1,0 +1,19 @@
+# ninja log v5
+1	5726	1744175609845261074	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	99079ef75556fe1e
+5726	6039	1744175610155976909	/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3a5u2d6c/obj/arm64-v8a/libgame.so	ece1ec41c94b1215
+7	5551	1744175609667916886	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f73a27dcd034d979
+29	4965	1744175609081971295	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	6694cf24f12f4e80
+4	4933	1744175609046522966	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	13b628943d8b678
+15	4743	1744175608864054534	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	451a4cdc74379ef
+11	4564	1744175608666904253	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	ac76fc4ef38b37d1
+3	4726	1744175608844845284	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	85cfd39666506f99
+5	4054	1744175608172913598	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	85c1d947e176837d
+32	48790	1744180309096498145	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	85c1d947e176837d
+24	48800	1744180309096474311	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	ac76fc4ef38b37d1
+25	48824	1744180309142854842	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	451a4cdc74379ef
+28	48834	1744180309161835744	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	85cfd39666506f99
+30	48924	1744180309254926185	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	13b628943d8b678
+31	48953	1744180309286072778	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	6694cf24f12f4e80
+33	49249	1744180309586405280	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f73a27dcd034d979
+27	49344	1744180309681075367	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	99079ef75556fe1e
+49344	66403	1744180326732420688	/Users/rem/projects/c#/Iron-Man-Simulation/IronManVR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3a5u2d6c/obj/arm64-v8a/libgame.so	ece1ec41c94b1215

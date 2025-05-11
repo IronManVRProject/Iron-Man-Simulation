@@ -1,0 +1,45 @@
+{
+    "name": "NewInputAction",
+    "maps": [
+        {
+            "name": "Button",
+            "id": "fda0a60c-eb11-4473-a5be-bc2cf39c6863",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c69608c5-8e92-42f0-bb86-c5b8eca42b43",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ccb1e799-6e33-4fc5-9ac6-c0d71e8d64d3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc9e1966-2848-487f-8060-d2e64ddc9d7d",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
