@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/VoiceControl.unity
+    guid: 2730bf7e03a5dfc4abd1ecd0d52ee53a
+  - enabled: 1
     path: Assets/Scenes/RepulsorTrainingScene.unity
     guid: b02c6c6fe265846e581c5e190f5daee2
   - enabled: 1

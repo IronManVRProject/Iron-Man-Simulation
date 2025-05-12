@@ -4,12 +4,37 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - QDSUIPrimaryButton
+  - QDSUISharedThemeColor
+  - QDSUIAccentColor
+  - QDSUISecondaryButton
+  - QDSUIDestructiveButton
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - Locomotion
+  - LocoButton
+  - LocoText
+  - PassThroughButton
+  - PassThrough
+  - QDSUITextInputField
+  - SamplesInfoPanel
+  - QDSUIToggleCheckboxRadio
+  - QDSUISection
+  - Enemy
+  - ListeningIndicator
+  serializedVersion: 3
+  tags:
   - Punchable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - EnemyIndicatorLayerPlayer
   - Water
   - UI
   - 
