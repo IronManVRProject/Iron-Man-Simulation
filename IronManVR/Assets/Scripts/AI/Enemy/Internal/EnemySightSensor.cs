@@ -51,16 +51,21 @@ namespace AI.FSM.Internal
         
         public bool IsPlayerInRange(float detectionRadius = 10f)
         {
-            var playerLayer = LayerMask.GetMask("Player");
+            var objectsInRange = Physics.OverlapSphere(transform.position, detectionRadius);
             
-            bool playerInRange = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer).Length > 0;
-            
-            if (playerInRange)
+            if (objectsInRange.Length > 0)
             {
-                Debug.Log("Player in range");
+                foreach (var collider in objectsInRange)
+                {
+                    if (collider.CompareTag("Player"))
+                    {
+                        Debug.Log("Player in range");
+                        return true;
+                    }
+                }
             }
 
-            return playerInRange;
+            return false;
         }
 
         private void OnDrawGizmos()

@@ -81,8 +81,8 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
     }
 
     private void FacePlayer()
-        {
-            if (playerTransform == null) return;
+    {
+        if (playerTransform == null) return;
 
         Vector3 lookDirection = playerTransform.position - transform.position;
         lookDirection.y = 0f;
@@ -110,9 +110,9 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
         if (hitEffectPrefab != null)
         {
             GameObject effect = Instantiate(hitEffectPrefab, hitPoint, Quaternion.LookRotation(-direction));
-            
+
             effect.transform.SetParent(transform);
-            
+
             Destroy(effect, 2f);
         }
 
@@ -128,16 +128,17 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
         OnTargetHit?.Invoke(scoreValue);
 
         // If dead, destroy
-        if (isDestructible && healthPoints <= 0 && !isDestroyed)
-        
-        // Notify of hit for scoring
-        if (OnTargetHit != null)
-            OnTargetHit(scoreValue);
-            
+        if (isDestructible && health && !health.IsAlive())
+
+            // Notify of hit for scoring
+            if (OnTargetHit != null)
+                OnTargetHit(scoreValue);
+
         // Check if target is destroyed
         if (isDestructible && health && health.IsAlive())
         {
             DestroyTarget();
+        }
     }
 
     private void DestroyTarget()
