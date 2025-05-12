@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9effe51aaab400e89950122bda948ba, type: 3}
   m_Name: Player In Attack Range
   m_EditorClassIdentifier: 
-  detectionRadius: 3
+  detectionRadius: 1.5
