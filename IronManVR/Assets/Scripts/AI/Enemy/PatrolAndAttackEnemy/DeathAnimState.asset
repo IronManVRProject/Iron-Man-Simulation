@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c9bd6069cc4511b2c33c9e001f53bd, type: 3}
-  m_Name: PatrolState
+  m_Name: DeathAnimState
   m_EditorClassIdentifier: 
   Action:
-  - {fileID: 11400000, guid: 2856d98b26d5c4b0b986b6891924f2cc, type: 2}
-  - {fileID: 11400000, guid: 47a5fb40c8f9b404ab9ca91f5e01a205, type: 2}
+  - {fileID: 11400000, guid: d4c5b8745b05b4e66b4a4320530ff6e6, type: 2}
   Transitions:
-  - {fileID: 11400000, guid: db17add0e54c143c99a3ec960999e019, type: 2}
-  - {fileID: 11400000, guid: 51065ee2bfcf949b3afc247ff1045959, type: 2}
+  - {fileID: 11400000, guid: 54008313bdecb4eaeb16df6565cd5577, type: 2}

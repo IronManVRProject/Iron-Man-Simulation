@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c9bd6069cc4511b2c33c9e001f53bd, type: 3}
-  m_Name: DeathState
+  m_Script: {fileID: 11500000, guid: cfef75dde8aa4bee9cfbc67b811f5f8b, type: 3}
+  m_Name: Attacking
   m_EditorClassIdentifier: 
-  Action:
-  - {fileID: 11400000, guid: d4c5b8745b05b4e66b4a4320530ff6e6, type: 2}
-  Transitions: []
+  otherStateMachine: {fileID: 458284834852290943, guid: c47a1cfaa2ad4490caada76e171cf2ec, type: 3}
+  stateToCheck: {fileID: 11400000, guid: e60e94f8efb8b4995820d659df461152, type: 2}
