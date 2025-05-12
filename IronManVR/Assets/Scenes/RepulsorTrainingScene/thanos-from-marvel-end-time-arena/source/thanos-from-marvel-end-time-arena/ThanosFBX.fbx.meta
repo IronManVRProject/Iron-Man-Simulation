@@ -13,12 +13,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 25_body_0.2_0_0.002
-    second: {fileID: -1030754827123973535, guid: 31f9f788bc3d1437cbc58469b78d3170, type: 3}
+    second: {fileID: 2100000, guid: 8418486be37594598b23b8277858f03d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 25_eyes_0.1_0_0.017
-    second: {fileID: -1805730325076690279, guid: 31f9f788bc3d1437cbc58469b78d3170, type: 3}
+    second: {fileID: 2100000, guid: 0afb826054cab443695e6e389200053b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -33,12 +33,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 27_grayenv_1_0_0.008
-    second: {fileID: -5949208286743927723, guid: 31f9f788bc3d1437cbc58469b78d3170, type: 3}
+    second: {fileID: 2100000, guid: 80e43deb1c78649d9bb7e5613c550f4f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 27_yellowenv_1_0_0.014
-    second: {fileID: -1467537849800540604, guid: 31f9f788bc3d1437cbc58469b78d3170, type: 3}
+    second: {fileID: 2100000, guid: b7ad39cb7a3e94cc58b862ec42dc8eea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

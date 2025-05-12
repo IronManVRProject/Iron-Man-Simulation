@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627ce2214320480684110affe6fb6de3, type: 3}
+  m_Name: IsDeathState
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: 2ece54493e04e489f81b278fef6553be, type: 2}
+  trueState: {fileID: 11400000, guid: 6c82acdd03ff84b5e9dd206ffd6f0979, type: 2}
+  falseState: {fileID: 11400000, guid: bf32ab63657ec4ce385e55b3be3f0a75, type: 2}

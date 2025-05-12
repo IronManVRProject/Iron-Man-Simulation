@@ -27,11 +27,14 @@ TagManager:
   - QDSUISection
   - Enemy
   - ListeningIndicator
+  serializedVersion: 3
+  tags:
+  - Punchable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - EnemyIndicatorLayer
+  - EnemyIndicatorLayerPlayer
   - Water
   - UI
   - 

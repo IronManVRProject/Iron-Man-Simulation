@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c9bd6069cc4511b2c33c9e001f53bd, type: 3}
+  m_Name: PatrolAnimState
+  m_EditorClassIdentifier: 
+  Action:
+  - {fileID: 11400000, guid: 2856d98b26d5c4b0b986b6891924f2cc, type: 2}
+  Transitions:
+  - {fileID: 11400000, guid: 9a32b722fd2bc4962a01a5be27fbd7d7, type: 2}
