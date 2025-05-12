@@ -86,8 +86,7 @@ public class RepulsorController : MonoBehaviour
             chargeEffect.Play();
             
         // Play sound effect
-        if (repulsorSound != null)
-            repulsorSound.Play();
+        PlaySound(repulsorSound?.clip);
             
         // Create beam
         CreateRepulsorBeam();
@@ -120,23 +119,27 @@ public class RepulsorController : MonoBehaviour
             
         // Destroy beam
         if (currentBeam != null)
-            Destroy(currentBeam);
+            StartCoroutine(FadeOutAndDestroyBeam());
             
         // Notify subscribers
         OnRepulsorDeactivated?.Invoke();
 
         Debug.Log("Repulsor Deactivated");
     }
+
+     private void PlaySound(AudioClip clip)
+    {
+        if (repulsorSound != null && clip != null)
+            repulsorSound.PlayOneShot(clip);
+    }
     
     private void SendHapticFeedback()
     {
         // Simple stub for haptic feedback
-        // For now, we'll just log that feedback would happen
-        // You can implement device-specific haptics later when you have the proper setup
+        // For now,  just log that feedback would happen
+        // We can implement device-specific haptics later when we have the proper setup
         Debug.Log("Repulsor activated - haptic feedback would trigger here");
         
-        // In a full implementation, you would use the XR device's haptic capabilities
-        // This varies by Unity version and XR plugin
     }
     
     private void CreateRepulsorBeam()
@@ -218,22 +221,58 @@ public class RepulsorController : MonoBehaviour
     
     private void ProcessHit(RaycastHit hit)
     {
-        // Apply force to rigidbodies
+        float distance = Vector3.Distance(repulsorEmissionPoint.position, hit.point);
+        float distanceFactor = 1f - Mathf.Clamp01(distance / maxBeamDistance);
+        float appliedForce = repulsorPower * distanceFactor;
+
         if (hit.rigidbody != null)
         {
             hit.rigidbody.AddForceAtPosition(
-                repulsorEmissionPoint.forward * repulsorPower,
+                repulsorEmissionPoint.forward * appliedForce,
                 hit.point,
                 ForceMode.Impulse
             );
         }
-        
-        // For targets, call a method they can implement
+
         IRepulsorTarget target = hit.collider.GetComponent<IRepulsorTarget>();
         if (target != null)
         {
-            target.OnHitByRepulsor(repulsorPower, hit.point, repulsorEmissionPoint.forward);
+            target.OnHitByRepulsor(appliedForce, hit.point, repulsorEmissionPoint.forward);
         }
+    }
+
+
+     private IEnumerator FadeOutAndDestroyBeam()
+    {
+        if (beamRenderer == null)
+        {
+            Destroy(currentBeam);
+            yield break;
+        }
+
+        float duration = 0.3f;
+        float elapsed = 0f;
+
+        Color startColor = beamRenderer.startColor;
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
+
+        float initialStartWidth = beamRenderer.startWidth;
+        float initialEndWidth = beamRenderer.endWidth;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            beamRenderer.startColor = Color.Lerp(startColor, endColor, t);
+            beamRenderer.endColor = Color.Lerp(startColor, endColor * 0.2f, t);
+            beamRenderer.startWidth = Mathf.Lerp(initialStartWidth, 0f, t);
+            beamRenderer.endWidth = Mathf.Lerp(initialEndWidth, 0f, t);
+
+            yield return null;
+        }
+
+        Destroy(currentBeam);
     }
     
     // New methods to support different firing modes

@@ -108,8 +108,30 @@
                 },
                 {
                     "name": "",
+                    "id": "bb9a0929-4ac5-4d77-943e-6d1bb9d23b09",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7a4df8fd-23e1-46f1-9c49-6401001180e8",
                     "path": "<OculusTouchController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0338fb1a-d362-4e4b-9f73-c6b5c1a5bdd7",
+                    "path": "<Keyboard>/n",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
