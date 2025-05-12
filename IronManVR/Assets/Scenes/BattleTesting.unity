@@ -187,11 +187,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 8441039281586896997, guid: 79865274760264c2fb81b14cad1ee117, type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5363237051637479463, guid: 79865274760264c2fb81b14cad1ee117, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 726342101}
     - targetCorrespondingSourceObject: {fileID: 5363237051637479463, guid: 79865274760264c2fb81b14cad1ee117, type: 3}
       insertIndex: -1
