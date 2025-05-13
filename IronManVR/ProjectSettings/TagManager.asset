@@ -27,8 +27,6 @@ TagManager:
   - QDSUISection
   - Enemy
   - ListeningIndicator
-  serializedVersion: 3
-  tags:
   - Punchable
   layers:
   - Default
@@ -37,7 +35,7 @@ TagManager:
   - EnemyIndicatorLayerPlayer
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
