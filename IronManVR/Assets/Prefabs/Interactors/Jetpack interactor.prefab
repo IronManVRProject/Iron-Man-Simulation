@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c776bc7d0c2ce468a9f2cadc75b12791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jetpackInputActionReference: {fileID: -3569655744423411783, guid: 64d15c7990bce411a967596373dec2fd, type: 3}
-  jetpackForce: 21000
+  jetpackInputActionReference: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  jetpackForce: 25000
   audioSource: {fileID: 1672678784796252207}
   particles: {fileID: 339519816183694883}
 --- !u!82 &1672678784796252207

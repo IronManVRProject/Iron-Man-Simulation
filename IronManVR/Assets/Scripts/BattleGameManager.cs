@@ -8,11 +8,14 @@ public class BattleGameManager : MonoBehaviour
     public Transform[] spawnPoints;
     public float checkTime = 1f;
     
+    
+    
     private float timer;
     private bool thanosAlive;
     
     void Start()
     {
+        // Instantiate(thanosPrefab, Vector3.zero, Quaternion.identity);
         timer = 0f;
     }
     
@@ -29,7 +32,7 @@ public class BattleGameManager : MonoBehaviour
 
     void FindThanos()
     {
-        thanosAlive = GameObject.Find("Chasing Thanos Variant") != null;
+        thanosAlive = GameObject.Find("Chasing Thanos Variant(Clone)") != null;
         
         if (thanosAlive) return;
         

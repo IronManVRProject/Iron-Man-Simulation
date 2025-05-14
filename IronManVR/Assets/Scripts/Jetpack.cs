@@ -22,12 +22,14 @@ public class Jetpack : MonoBehaviour
     {
         jetpackInputActionReference.action.Enable();
         jetpackInputActionReference.action.performed += SetTriggerValue;
+        jetpackInputActionReference.action.canceled += ResetTriggerValue;
     }
-
+    
     private void OnDisable()
     {
         jetpackInputActionReference.action.Disable();
         jetpackInputActionReference.action.performed -= SetTriggerValue;
+        jetpackInputActionReference.action.canceled -= ResetTriggerValue;
     }
 
     // Event function
@@ -35,10 +37,17 @@ public class Jetpack : MonoBehaviour
     {
         _triggerValue = obj.ReadValue<float>();
     }
+    
+    void ResetTriggerValue(InputAction.CallbackContext obj)
+    {
+        _triggerValue = 0;
+    }
 
     private void FixedUpdate()
     {
-		if (_triggerValue > 0)
+        Debug.Log(_triggerValue);
+        
+		if (_triggerValue > 0.1)
         {
             if (!audioSource.isPlaying)
             {
@@ -48,7 +57,8 @@ public class Jetpack : MonoBehaviour
             {
                 particles.Play();
             }
-            _playerRb.AddForce(-transform.forward * (_triggerValue * jetpackForce * Time.deltaTime), ForceMode.Force);
+            
+            _playerRb.AddForce(-transform.forward * (jetpackForce * Time.deltaTime), ForceMode.Force);
         }
         
         if (_triggerValue <= 0.6) 

@@ -113,7 +113,7 @@ public class RepulsorTrainingManager : MonoBehaviour
             UpdateTimerUI();
             
             // Play countdown sound in final 10 seconds
-            if (remainingTime <= 30f && remainingTime > 29.9f && countdownSound != null)
+            if (countdownSound != null && !audioSource.isPlaying)
             {
                 audioSource.clip = countdownSound;
                 audioSource.Play();
