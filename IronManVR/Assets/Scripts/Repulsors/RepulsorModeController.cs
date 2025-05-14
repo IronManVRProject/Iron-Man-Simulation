@@ -13,11 +13,11 @@ public class RepulsorModeController : MonoBehaviour
     [SerializeField] private RepulsorMode currentMode = RepulsorMode.Single;
 
     [Header("Mode Settings")]
-    [SerializeField] private float singleShotPower = 10f;        // Power for single shot
+    [SerializeField] private float singleShotPower = 100f;        // Power for single shot
     [SerializeField] private float burstShotPower = 5f;          // Power per shot in burst mode
-    [SerializeField] private int burstCount = 3;                 // Number of shots in burst mode
-    [SerializeField] private float burstDelay = 0.1f;            // Delay between shots in burst mode
-    [SerializeField] private float continuousShotPower = 3f;     // Power during continuous fire
+    [SerializeField] private int burstCount = 10;                 // Number of shots in burst mode
+    [SerializeField] private float burstDelay = 0.25f;            // Delay between shots in burst mode
+    [SerializeField] private float continuousShotPower = 8f;     // Power during continuous fire
     [SerializeField] private float continuousDrainRate = 0.05f;  // Energy drain per second
 
     [Header("Energy System")]
@@ -171,7 +171,8 @@ public class RepulsorModeController : MonoBehaviour
     {
         // Cache the beam appearance
         if (beam == null) return;
-        beamRenderer = beam.GetComponent<LineRenderer>();
+            beamRenderer = beam.GetComponent<LineRenderer>();
+            
         if (beamRenderer != null)
         {
             originalBeamWidth = beamRenderer.startWidth;
@@ -226,7 +227,7 @@ public class RepulsorModeController : MonoBehaviour
         if (beamRenderer != null)
         {
             beamRenderer.enabled = true;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.2f);
             beamRenderer.enabled = false;
         }
     }
@@ -249,7 +250,7 @@ public class RepulsorModeController : MonoBehaviour
                 beamRenderer.enabled = true;
                 TriggerBeamHitWithEffect();
                 TriggerHapticPulse();
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.2f);
                 beamRenderer.enabled = false;
             }
 

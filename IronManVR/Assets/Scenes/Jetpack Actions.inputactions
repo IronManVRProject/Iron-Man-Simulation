@@ -1,0 +1,54 @@
+{
+    "name": "Jetpack Actions",
+    "maps": [
+        {
+            "name": "Activate",
+            "id": "b5033db8-5270-4a07-8916-f288b7310027",
+            "actions": [
+                {
+                    "name": "Left",
+                    "type": "Button",
+                    "id": "9d205d27-4113-435c-bc7a-3b580a85fadb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right",
+                    "type": "Button",
+                    "id": "0f78f0cd-9e27-4aa7-b2b4-29e24db2a998",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "66452d96-3d0f-44c0-a345-63baafde50b6",
+                    "path": "<OculusTouchController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ba3cfa5-4c00-4aaa-9f38-873f63a358ec",
+                    "path": "<OculusTouchController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

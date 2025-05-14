@@ -14,7 +14,9 @@ namespace AI.FSM.Internal
         {
             if (player == null)
             {
-                player = GameObject.Find("Player").transform;
+                player = GameObject.FindGameObjectWithTag("Player").transform;
+                
+                Debug.Log($"Found player object: {player.name}");
             }
         }
 
@@ -51,15 +53,19 @@ namespace AI.FSM.Internal
         
         public bool IsPlayerInRange(float detectionRadius = 10f)
         {
+            if (!player.gameObject.activeInHierarchy || !player.gameObject.activeSelf)
+            {
+                return false;
+            }
+            
             var objectsInRange = Physics.OverlapSphere(transform.position, detectionRadius);
             
             if (objectsInRange.Length > 0)
             {
-                foreach (var collider in objectsInRange)
+                foreach (var other in objectsInRange)
                 {
-                    if (collider.CompareTag("Player"))
+                    if (other.gameObject.Equals(player.gameObject))
                     {
-                        Debug.Log("Player in range");
                         return true;
                     }
                 }

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a9a3229cf74b25a60a9a601bd710cd, type: 3}
   m_Name: AttackAction
   m_EditorClassIdentifier: 
+  damage: 20
+  onKillState: {fileID: 11400000, guid: b34375de0d2bf4e8186f01d61aa6be1a, type: 2}

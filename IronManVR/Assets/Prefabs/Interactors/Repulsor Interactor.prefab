@@ -54,7 +54,7 @@ MonoBehaviour:
   repulsorPower: 10
   maxBeamDistance: 20
   repulsorColor: {r: 0.99607843, g: 0.19215687, b: 0.21176471, a: 1}
-  activateRepulsorAction: {fileID: -5876429888961329571, guid: c5eec0c796afa4012b5f12f0640ba606, type: 3}
+  activateRepulsorAction: {fileID: -8619080738613139662, guid: c5eec0c796afa4012b5f12f0640ba606, type: 3}
   chargeEffect: {fileID: 0}
   repulsorSound: {fileID: 7781397529231463677}
 --- !u!82 &7781397529231463677
@@ -167,12 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 2
-  singleShotPower: 10
+  singleShotPower: 25
   burstShotPower: 5
-  burstCount: 3
+  burstCount: 10
   burstDelay: 0.1
-  continuousShotPower: 3
+  continuousShotPower: 5
   continuousDrainRate: 0.05
+  maxEnergy: 1
+  energyRechargeRate: 0.2
   modeChangeEffect: {fileID: 0}
   impactEffectPrefab: {fileID: 0}
   singleModeColor: {r: 0.3, g: 0.8, b: 1, a: 1}
@@ -184,6 +186,9 @@ MonoBehaviour:
   continuousShotSound: {fileID: 8300000, guid: 4d6875f455fbc485eb99ec762b233aec, type: 3}
   audioSource: {fileID: 7781397529231463677}
   cycleModesAction: {fileID: 6338659454925840261, guid: c5eec0c796afa4012b5f12f0640ba606, type: 3}
+  hapticController: {fileID: 0}
+  hapticAmplitude: 0.5
+  hapticDuration: 0.1
 --- !u!1 &4677916916810752626
 GameObject:
   m_ObjectHideFlags: 0

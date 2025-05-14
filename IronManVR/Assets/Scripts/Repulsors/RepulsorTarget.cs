@@ -97,7 +97,7 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
 
         // Apply damage
         if (isDestructible)
-            health.TakeDamage(Mathf.RoundToInt(power));
+            health.TakeDamage(power);
 
         // Trigger animation
         if (animator != null)
@@ -113,7 +113,7 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
 
             effect.transform.SetParent(transform);
 
-            Destroy(effect, 2f);
+            Destroy(effect, 0.4f);
         }
 
         // Random hit sound
@@ -130,12 +130,12 @@ public class RepulsorTarget : MonoBehaviour, IRepulsorTarget
         // If dead, destroy
         if (isDestructible && health && !health.IsAlive())
 
-            // Notify of hit for scoring
-            if (OnTargetHit != null)
-                OnTargetHit(scoreValue);
+        // Notify of hit for scoring
+        if (OnTargetHit != null)
+            OnTargetHit(scoreValue);
 
         // Check if target is destroyed
-        if (isDestructible && health && health.IsAlive())
+        if (isDestructible && health && !health.IsAlive())
         {
             DestroyTarget();
         }

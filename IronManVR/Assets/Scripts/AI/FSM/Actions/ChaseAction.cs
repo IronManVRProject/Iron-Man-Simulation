@@ -13,6 +13,8 @@ namespace AI.FSM
             var enemy = stateMachine.GetComponent<EnemySightSensor>();
 
             navMeshAgent.SetDestination(enemy.player.transform.position);
+            
+            Debug.Log($"Agent current location: {navMeshAgent.transform.position}. New NavMeshAgent destination: {navMeshAgent.destination}");
         }
     }
 }

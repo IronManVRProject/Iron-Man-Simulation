@@ -25,14 +25,14 @@ public class PunchInteractor : MonoBehaviour
     private Vector3 previousPosition;
     [HideInInspector]
     public float currentVelocity;
-    private float lastPunchTime = -1f; // Initialize to allow punching immediately
+    private float lastPunchTime = -1f;
 
     void Start()
     {
         previousPosition = transform.position;
     }
 
-    void FixedUpdate() // Good for physics related calculations
+    void FixedUpdate()
     {
         Vector3 currentPosition = transform.position;
         float distance = Vector3.Distance(currentPosition, previousPosition);
@@ -42,59 +42,45 @@ public class PunchInteractor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (Time.time < lastPunchTime + punchCooldown)
+        if (Time.time < lastPunchTime + punchCooldown) return;
+        if (currentVelocity < punchVelocityThreshold) return;
+        if (!other.gameObject.CompareTag(punchableTag)) return;
+        
+        
+        
+        Debug.Log($"PUNCHED: {other.gameObject.name} with velocity {currentVelocity}!");
+        
+        lastPunchTime = Time.time;
+
+        var punchable = other.GetComponent<Punchable>();
+        if (punchable == null) return;
+
+        punchable.PlayHitSound();
+        
+        Rigidbody targetRb = other.GetComponent<Rigidbody>();
+        if (targetRb != null && !targetRb.isKinematic)
         {
-            return; // Still in cooldown
+            Vector3 punchDirection = (other.transform.position - transform.position).normalized;
+            float forceMagnitude = punchStrengthMultiplier * currentVelocity;
+            targetRb.AddForce(punchDirection * forceMagnitude, ForceMode.Impulse);
         }
         
-        if (currentVelocity < punchVelocityThreshold)
+        Health health = other.GetComponentInChildren<Health>();
+        if (health)
         {
-            return; // Not fast enough to register as a punch
+            float damage = punchDamageMultiplier * currentVelocity;
+            health.TakeDamage(damage);
+            Debug.Log($"Dealt {damage} damage to {other.gameObject.name}!");
         }
         
-        if (other.gameObject.CompareTag(punchableTag))
+        var effect = Instantiate(punchEffectPrefab, transform.position, Quaternion.identity);
+        var particle = effect.GetComponent<ParticleSystem>();
+
+        if (particle)
         {
-            Debug.Log($"PUNCHED: {other.gameObject.name} with velocity {currentVelocity}!");
-
-            // --- Apply Punch Effects ---
-            lastPunchTime = Time.time;
-
-            var punchable = other.GetComponent<Punchable>();
-            if (punchable != null)
-            {
-                punchable.PlayHitSound();
-            }
-
-            // Apply physics force (if the target has a non-kinematic Rigidbody)
-            Rigidbody targetRb = other.GetComponent<Rigidbody>();
-            if (targetRb != null && !targetRb.isKinematic)
-            {
-                Vector3 punchDirection = (other.transform.position - transform.position).normalized;
-                float forceMagnitude = punchStrengthMultiplier * currentVelocity;
-                targetRb.AddForce(punchDirection * forceMagnitude, ForceMode.Impulse);
-            }
-            
-            Health health = other.GetComponentInChildren<Health>();
-            if (health)
-            {
-                int damage = Mathf.RoundToInt(punchDamageMultiplier * currentVelocity);
-                health.TakeDamage(damage);
-                Debug.Log($"Dealt {damage} damage to {other.gameObject.name}!");
-            }
-
-            // Trigger Haptics (Requires configuration in Input Actions)
-            // controller.SendHapticImpulse(0.7f, 0.2f); // (intensity, duration) - Adjust values
-
-            // Instantiate Visual Effect (e.g., particle system)
-            var effect = Instantiate(punchEffectPrefab, transform.position, Quaternion.identity);
-            var particle = effect.GetComponent<ParticleSystem>();
-
-            if (particle)
-            {
-                particle.Play();
-            }
-            
-            Destroy(effect, 2f);
+            particle.Play();
         }
+        
+        Destroy(effect, 2f);
     }
 }

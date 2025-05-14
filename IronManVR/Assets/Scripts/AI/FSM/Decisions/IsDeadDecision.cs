@@ -11,6 +11,7 @@ namespace AI.FSM
 
             if (health && !health.IsAlive())
             {
+                Debug.Log("Thanos died!");
                 return true;
             }
 

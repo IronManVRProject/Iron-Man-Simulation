@@ -49,9 +49,9 @@ MonoBehaviour:
   punchVelocityThreshold: 1.5
   punchCooldown: 0.5
   punchableTag: Punchable
-  punchStrengthMultiplier: 2
+  punchStrengthMultiplier: 20
+  punchDamageMultiplier: 40
   punchEffectPrefab: {fileID: 3519552542754284382, guid: ba37bdc6e60734b70bad3cabbda5e072, type: 3}
-  controllerRigidbody: {fileID: 0}
   currentVelocity: 0
 --- !u!135 &9041524682748483102
 SphereCollider:

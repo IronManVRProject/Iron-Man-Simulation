@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int initialHealth = 100;
+    public float initialHealth = 100f;
     
     [SerializeField]
-    private int currentHealth;
+    private float currentHealth;
     
     void Start()
     {
@@ -15,12 +15,17 @@ public class Health : MonoBehaviour
 
     public bool IsAlive()
     {
-        return currentHealth <= 0;
+        return currentHealth > 0;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. New health: {currentHealth}");
+        
+        // if (currentHealth <= 0)
+        // {
+        //     gameObject.SetActive(false);
+        // }
     }
 }

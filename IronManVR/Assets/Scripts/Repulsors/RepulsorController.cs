@@ -225,14 +225,14 @@ public class RepulsorController : MonoBehaviour
         float distanceFactor = 1f - Mathf.Clamp01(distance / maxBeamDistance);
         float appliedForce = repulsorPower * distanceFactor;
 
-        if (hit.rigidbody != null)
-        {
-            hit.rigidbody.AddForceAtPosition(
-                repulsorEmissionPoint.forward * appliedForce,
-                hit.point,
-                ForceMode.Impulse
-            );
-        }
+        // if (hit.rigidbody != null)
+        // {
+        //     hit.rigidbody.AddForceAtPosition(
+        //         repulsorEmissionPoint.forward * appliedForce,
+        //         hit.point,
+        //         ForceMode.Impulse
+        //     );
+        // }
 
         IRepulsorTarget target = hit.collider.GetComponent<IRepulsorTarget>();
         if (target != null)

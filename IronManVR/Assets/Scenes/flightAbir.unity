@@ -21481,6 +21481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100209914252107676, guid: 9fe923f730a154005b875e3de83abb64, type: 3}
+      propertyPath: jetpackInputActionReference
+      value: 
+      objectReference: {fileID: 6185454679756131910, guid: 64d15c7990bce411a967596373dec2fd, type: 3}
     - target: {fileID: 2576359708409102695, guid: 9fe923f730a154005b875e3de83abb64, type: 3}
       propertyPath: m_Name
       value: XR Player (XR Rig)
@@ -21529,6 +21533,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8565805742000714652, guid: 9fe923f730a154005b875e3de83abb64, type: 3}
+      propertyPath: jetpackInputActionReference
+      value: 
+      objectReference: {fileID: -3569655744423411783, guid: 64d15c7990bce411a967596373dec2fd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

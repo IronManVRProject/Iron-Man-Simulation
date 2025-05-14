@@ -6,16 +6,24 @@ namespace AI.FSM
     [CreateAssetMenu(menuName = "FSM/Actions/Attack")]
     public class AttackAction : FSMAction
     {
-        public int damage = 10;
+        public float damage = 10;
+        public State onKillState;
         
         public override void Execute(FiniteStateMachine stateMachine)
         {
             var enemy = stateMachine.GetComponent<EnemySightSensor>();
+            
+            if (!enemy.player.gameObject.activeSelf)
+            {
+                stateMachine.currentState = onKillState;
+                return;
+            }
+            
             var health = enemy.player.GetComponent<Health>();
             
-            if (enemy.player.GetComponent<Health>().IsAlive())
+            if (health.IsAlive())
             {
-                health.TakeDamage(damage);
+                health.TakeDamage(damage * Time.deltaTime);
             }
         }
     }
