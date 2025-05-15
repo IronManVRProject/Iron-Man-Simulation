@@ -16,7 +16,7 @@ public class RepulsorModeController : MonoBehaviour
     [SerializeField] private float singleShotPower = 100f;        // Power for single shot
     [SerializeField] private float burstShotPower = 5f;          // Power per shot in burst mode
     [SerializeField] private int burstCount = 10;                 // Number of shots in burst mode
-    [SerializeField] private float burstDelay = 0.25f;            // Delay between shots in burst mode
+    [SerializeField] private float burstDelay = 0.1f;            // Delay between shots in burst mode
     [SerializeField] private float continuousShotPower = 8f;     // Power during continuous fire
     [SerializeField] private float continuousDrainRate = 0.05f;  // Energy drain per second
 
